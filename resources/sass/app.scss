@@ -1,6 +1,8 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 
 // Variables
 @import 'variables';
@@ -12,3 +14,13 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+.primary {
+	color: #40614D;
+}
+.secondary {
+	color: #0E3746;
+}
+.border {
+	color: #6c757d;
+}
+

@@ -1,0 +1,77 @@
+@import 'app';
+
+body {
+    overflow-x: hidden;
+    font-family: 'poppins';
+}
+.text-small {
+    font-size: 0.8em;
+}
+.border-top {
+    color: #6c757d;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat';
+    color: #40614D;
+}
+.bg-darkgreen {
+    background-color: #40614D;
+}
+.text-muted {
+    color: #cccccc;
+}
+.home {
+  background-image: url("../images/web-images/autocamper.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+footer a:link, footer a:visited {
+    color: #CFD8DC;
+}
+
+.my-4 {
+    margin-top: 0px !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    text-transform: uppercase;
+}
+.navbar-dark .navbar-nav > li > a {
+    color: white;
+}
+.navbar-dark .navbar-brand:hover {
+    color: white;
+    opacity: 0.75;
+}
+.navbar-dark .navbar-nav > li > a:hover {
+    color: white;
+    opacity: 0.75;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #0E3746;
+}
+.navbar-light .navbar-nav > li > a {
+    color: #0E3746;
+}
+.navbar-light .navbar-brand:hover {
+    color: #BE2623;
+    opacity: 0.75;
+}
+.navbar-light .navbar-nav > li > a:hover {
+    color: #BE2623;
+    opacity: 0.75;
+}
+.btn-register {
+    background-color: #BE2623;
+    color: #ffffff;
+}
+.navbar-light .navbar-nav .btn-register {
+    color: #FFFFFF;
+}
+.btn-secondary {
+    background-color: #0E3746;
+    color: #ffffff;
+    padding: 5px 20px;
+}
