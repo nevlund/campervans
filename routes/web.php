@@ -16,12 +16,20 @@ Route::get('/', function () {
     return view('index', compact('posts'));
 });
 
-Route::get('post/lastest-post', function () {
+Route::get('blog', function () {
     $posts = App\Post::all();
     return view('blog', compact('posts'));
 });
 
+// About us page
+Route::get('omos', 'PublicController@omos')->name('omos');
 
+// Blog page
+
+
+// Contact us page
+Route::get('contact', 'ContactController@contact');
+Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
 
 Route::get('post/{slug}', function($slug){
 	$post = App\Post::where('slug', '=', $slug)->firstOrFail();

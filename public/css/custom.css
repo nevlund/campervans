@@ -1,4 +1,4 @@
-@import 'app';
+@import url("app.css");
 
 body {
     overflow-x: hidden;
@@ -13,6 +13,7 @@ body {
 h1, h2, h3, h4, h5 {
     font-family: 'Montserrat';
     color: #40614D;
+    clear:both;
 }
 .bg-darkgreen {
     background-color: #40614D;
@@ -20,10 +21,9 @@ h1, h2, h3, h4, h5 {
 .text-muted {
     color: #cccccc;
 }
-.home {
-  background-image: url("../images/web-images/autocamper.jpg");
-  background-position: right;
-  background-repeat: no-repeat;
+.about {
+  background-image: url("../images/web-images/header.jpg");
+  background-size: cover;
 }
 
 footer a:link, footer a:visited {

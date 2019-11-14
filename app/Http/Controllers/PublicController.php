@@ -11,4 +11,8 @@ class PublicController extends Controller
         return view('blog');
     }
 
+    public function omos() {
+        return view('omos');
+    }
+
 }

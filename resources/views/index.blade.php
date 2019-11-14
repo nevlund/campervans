@@ -42,9 +42,10 @@
 
      	</div>           
     </div>
-    <div class="container">
-		<br><br>
+    <div class="container mt-4 pt-4">
+		<h2 align="center">Tips & Inspiration</h2>
 		<div class="row">
+			
 		@foreach($posts as $post)
 			<div class="col-md-3">
 				<a href="/post/{{ $post->slug }}">
