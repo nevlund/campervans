@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('index', compact('posts'));
 });
 
+// Listings page
+Route::get('annoncer', 'ClassifiedsController@index')->name('annoncer');
+
+// Blog page
 Route::get('blog', function () {
     $posts = App\Post::all();
     return view('blog', compact('posts'));
@@ -24,8 +28,10 @@ Route::get('blog', function () {
 // About us page
 Route::get('omos', 'PublicController@omos')->name('omos');
 
-// Blog page
+// Listings
+Route::resource('classifieds', 'ClassifiedsController');
 
+Route::resource('listcategories', 'ListcategoriesController');
 
 // Contact us page
 Route::get('contact', 'ContactController@contact');

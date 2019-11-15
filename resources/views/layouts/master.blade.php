@@ -15,11 +15,11 @@
 
     <!-- Styles -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <link href='https://fonts.googleapis.com/css?family=poppins' rel='stylesheet'>
+     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://use.fontawesome.com/8e3f45021f.js"></script>
 
 </head>

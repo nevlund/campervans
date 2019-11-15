@@ -20,6 +20,9 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item px-2">
+                    <a class="nav-link" href="{{ route('annoncer') }}">Annoncer</a>
+                </li>
+                <li class="nav-item px-2">
                     <a class="nav-link" href="{{ route('omos') }}">Om os</a>
                 </li>
                 <li class="nav-item px-2">

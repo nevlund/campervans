@@ -4,6 +4,22 @@ body {
     overflow-x: hidden;
     font-family: 'poppins';
 }
+.overflow {
+  width: 30em;
+  outline: 0px solid #000;
+  margin: 0 0 2em 0;
+  
+  /**
+   * Required properties to achieve text-overflow
+   */
+    white-space: nowrap;
+    overflow: hidden;
+}
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .text-small {
     font-size: 0.8em;
 }
