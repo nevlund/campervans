@@ -1,32 +1,36 @@
-@section('title', 'Show')
+@extends('layouts.master')
 
 @section('content')
-     <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{$classified->title}}</h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-                   <img src="/images/{{$classified->main_image}}">
-                </div>
-                <div class="col-md-8">
-                    <h3>Item Description</h3>
-                    <p>{{$classified->description}}</p>
-                    <h3>Item Details</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Price:</strong> {{$classified->price}} </li>
-                        <li class="list-group-item"><strong>Condition:</strong> {{$classified->condition}} </li>
+<main role="main">
+
+    <div class="container mt-4">
+        
+        <div class="row mt-4 mb-2 pt-2 pb-2">
+            <div class="col-md-4">
+                <img src="{{asset ('/')}}images/listings/{{$classified->main_image}}" width="250">
+            </div>
+            <div class="col-md-8">
+                <h3>{{$classified->title}}</h3>
+                <p>{{$classified->description}}</p>
+
+                <h4 class="pt-4">Detaljer</h4>
+
+                <ul class="list-group">
+                        <li class="list-group-item"><strong>Pris kr:</strong> {{$classified->price}} </li>
+                        <li class="list-group-item"><strong>Stand:</strong> {{$classified->condition}} </li>
                     </ul>
                     
-                     <h3>Seller Details</h3>
+                    <h4 class="pt-4">Kontakt information</h4>
                     <ul class="list-group">
-                        <li class="list-group-item"><strong>Location:</strong> {{$classified->location}} </li>
-                        <li class="list-group-item"><strong>Contact Email:</strong> {{$classified->email}} </li>
-                        <li class="list-group-item"><strong>Contact Phone:</strong> {{$classified->phone}} </li>
+                        <li class="list-group-item"><strong>Område:</strong> {{$classified->location}} </li>
+                        <li class="list-group-item"><strong>Kontakt email:</strong> {{$classified->email}} </li>
+                        <li class="list-group-item"><strong>Kontakt tlf:</strong> {{$classified->phone}} </li>
                     </ul>
-                </div>
             </div>
-        </div>
+           
+        </div>    
     </div>
-@stop
+
+     
+</main>
+@endsection

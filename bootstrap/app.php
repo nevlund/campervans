@@ -51,5 +51,8 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+$app->bind('path.public', function(){
+    return base_path().'/public';
+});
 
 return $app;

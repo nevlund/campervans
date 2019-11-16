@@ -1,9 +1,22 @@
 @import url("app.css");
 
 body {
+    
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    font-family: 'poppins';
 }
+
+.primary {
+    color: #40614D;
+}
+.secondary{
+    color:#0E3746;
+} 
+li.page-item.active li.page-link {
+    background-color: #0E3746;
+    border-color: #0E3746;
+}
+
 .overflow {
   width: 30em;
   outline: 0px solid #000;
@@ -30,6 +43,9 @@ h1, h2, h3, h4, h5 {
     font-family: 'Montserrat';
     color: #40614D;
     clear:both;
+}
+h1 {
+    font-size: 1.75em;
 }
 .bg-darkgreen {
     background-color: #40614D;

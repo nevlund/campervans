@@ -16,6 +16,13 @@ Route::get('/', function () {
     return view('index', compact('posts'));
 });
 
+Route::get('annoncer', function () {
+    $posts = App\Classified::all();
+    return view('annoncer', compact('classifieds'));
+});
+
+
+
 // Listings page
 Route::get('annoncer', 'ClassifiedsController@index')->name('annoncer');
 
@@ -49,3 +56,6 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/create/', 'HomeController@create')->name('create');
+
+

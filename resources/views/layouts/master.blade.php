@@ -18,8 +18,9 @@
      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
     <script src="https://use.fontawesome.com/8e3f45021f.js"></script>
 
 </head>
@@ -27,6 +28,7 @@
 <body>
 
 @include('includes.navigation')
+
 
 @yield('content')
 
