@@ -7,7 +7,7 @@
         
         <div class="row mt-4 mb-2 pt-2 pb-2">
             <div class="col-md-4">
-                <img src="{{asset ('/')}}images/listings/{{$classified->main_image}}" width="250">
+                <img src="{{asset ('/')}}images/listings/{{$classified->image}}" width="250">
             </div>
             <div class="col-md-8">
                 <h3>{{$classified->title}}</h3>

@@ -13,6 +13,6 @@ class Listcategory extends Model
     protected $hidden = [];
     
     public function classifieds(){
-        return $this->hasMany('App\Classified'');
+        return $this->hasMany('App\Classified');
     }
 }

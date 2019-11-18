@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\File;
 use App\Http\Requests;
 use App\http\Controllers\Controller;
 use App\Classified;
+use Auth;
 
 
 class ClassifiedsController extends Controller
@@ -60,7 +61,8 @@ class ClassifiedsController extends Controller
         $location = $request->input('location');
         $email = $request->input('email');
         $phone = $request->input('phone');
-        $owner_id = $request->input('owner_id');
+        $user_id = auth()->id();
+        
         //$owner_id = 1;
         
         // Check if image uploaded
@@ -72,7 +74,7 @@ class ClassifiedsController extends Controller
         }
         
         // Create Command
-        $command = new StoreClassifiedCommand($title, $category_id, $description, $main_image_filename, $price, $condition, $location, $email, $phone, $owner_id);
+        $command = new StoreClassifiedCommand($title, $category_id, $description, $main_image_filename, $price, $condition, $location, $email, $phone, $user_id);
         $this->dispatch($command);
         
         return \Redirect::route('classifieds.index')

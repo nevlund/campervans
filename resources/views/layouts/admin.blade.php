@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <!-- CoreUI CSS -->
@@ -23,7 +26,17 @@
   <div class="app-body">
     <div class="sidebar">
       <!-- Sidebar content here -->
-      sidebar
+      <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('home') }}">Kontrolpanel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('visannoncer') }}">Vis annoncer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('create') }}">Opret annonce</a>
+        </li>
+      </ul>  
     </div>
     <main class="main">
       <!-- Main content here -->

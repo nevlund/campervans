@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Product;
+use App\Classified;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -12,60 +12,66 @@ use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
-   public function __construct() {
+   //public function __construct() {
 
-       $this->middleware('checkRole:admin');
-   }
+       //$this->middleware('checkRole:admin');
+   //}
 
    // display all products in admin section
    public function dashboard () {
 
-        $products = Product::paginate(10);
+        $classifieds = Classified::paginate(10);
 
-        return view ('admin.displayproducts', ['products'=>$products]);
+        return view ('visannoncer', ['classifieds'=>$classifieds]);
     }
 
-    public function createProduct () {
+    public function create () {
 
-       return view('admin.createproduct');
+       return view('create');
 
 
     }
 
     // create new products - save to database
-    public function createProductForm (Request $request) {
+    public function createListingForm (Request $request) {
 
-        $artist = $request->input('artist');
         $title = $request->input('title');
+        $category_id = $request->input('category_id');
         $description = $request->input('description');
-        $condition = $request->input('condition');
-        $category = $request->input('category');
         $price = $request->input('price');
+        $condition = $request->input('condition');
+        $image = $request->file('image');
+        $location = $request->input('location');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $user_id = auth()->id();
 
-
+        
         Validator::make($request->all(),['image'=>'required|file|image|mimes:jpg,png,jpeg|max:2000'])->validate();
-        $ext =  $request->file("image")->getClientOriginalExtension();
-        $strImageReformat = str_replace(' ', '',$request->input('title'));
+        $ext =  $request->file("image")->getClientOriginalName();
+        $strImageReformat = $request->input('image');
 
-        $imageName = $strImageReformat.".".$ext;
+        $image = $strImageReformat."".$ext;
 
         $imageEncode = File::get($request->image);
 
-        Storage::disk('public')->put($imageName, $imageEncode);
+        Storage::disk('public')->put($image, $imageEncode);
 
-        $createProduct = Array('artist'=>$artist, 'title'=>$title, 'description'=>$description, 'condition'=>$condition, 'image'=>$imageName, 'category'=>$category, 'price'=>$price);
 
-        DB::table('products')->insert($createProduct);
+        
+        $createListing = Array('title'=>$title, 'category_id'=>$category_id, 'description'=>$description, 'price'=>$price, 'condition'=>$condition, 'image'=>$image, 'location'=>$location, 'email'=>$email, 'phone'=>$phone, 'user_id'=>$user_id);
 
-        return redirect()->route('displayproducts');
+        DB::table('classifieds')->insert($createListing);
+
+        return redirect()->route('home');
 
     }
 
     // display product edit form
-    public function editProduct ($id) {
+    public function editListing ($id) {
 
-       $product = Product::find($id);
-       return view('admin.editproduct', ['product'=>$product]);
+       $classified = Classified::find($id);
+       return view('editListing', ['classified'=>$classified]);
 
     }
 
@@ -131,19 +137,12 @@ class AdminController extends Controller
 
     }
 
-    public function deleteProduct ($id) {
+    public function deleteListing ($id) {
 
-       $product = Product::find($id);
+       $classified = Classified::find($id);
 
-       $exists = Storage::disk('public')->exists($product->image);
+       Classified::destroy($id);
 
-       if($exists){
-            Storage::delete('public/images/product-images/'.$product->image);
-
-        }
-
-       Product::destroy($id);
-
-       return redirect()->route('displayproducts');
+       return redirect()->route('visannoncer');
     }
 }

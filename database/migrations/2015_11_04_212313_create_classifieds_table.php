@@ -22,7 +22,7 @@ class CreateClassifiedsTable extends Migration
             $table->string('location');
             $table->string('email');
             $table->string('phone');
-            $table->integer('owner_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

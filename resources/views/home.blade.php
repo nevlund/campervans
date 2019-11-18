@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('content')
-<div class="container">
+@section('body')
+<div class="container mt-4 pt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Kontrolpanel</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +13,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    
+                    Du er nu logget ind som: {{ Auth::user()->name }}!
                 </div>
+                <div class="card-body">
+                    Brugernavn: {{ Auth::user()->email }}<br>
+                    Rolle id: {{ Auth::user()->role_id }}
+
+
+                </div>    
             </div>
         </div>
     </div>

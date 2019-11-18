@@ -2,16 +2,6 @@
 
 @section('body')
 
-      @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-
-                    <li>{!! print_r($errors->all()) !!}</li>
-
-                </ul>
-            </div>
-        @endif
-
 
 <main role="main">
 
@@ -23,10 +13,9 @@
           <h3 class="panel-title">Opret annonce</h3>
         </div>
         <div class="col mt-2 mb-2">
-         <form action="/createlisting" method="post" enctype="multipart/form-data">
+         <form action="AdminController@createListingForm" method="post" enctype="multipart/form-data">
 
-            {{csrf_field()}}
-
+          {{csrf_field()}}
 
           <div class="col">
 
@@ -43,7 +32,9 @@
 
             <div class="form-group">
                 <label for="description">Beskrivelse</label>
-                <textarea rows="4" cols="50" class="form-control" name="description" id="description" placeholder="Beskrivelse" required></textarea>
+                <textarea rows="4" cols="50" class="form-control" name="description" id="description" placeholder="Beskrivelse" required>
+                  
+                </textarea>
             </div>
             <div class="form-group">
                 <label for="price">Pris</label>
@@ -58,8 +49,8 @@
                 </select>
             </div>
             <div class="form-group">
-              <label for="image">Primær billede</label>
-              <input type="file" name="image" accept="image/*">
+              <label for="main_image">Primær billede</label>
+              <input type="file" name="main_image" accept="image/*">
             </div>  
     
           </div>

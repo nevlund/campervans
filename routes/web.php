@@ -38,6 +38,9 @@ Route::get('omos', 'PublicController@omos')->name('omos');
 // Listings
 Route::resource('classifieds', 'ClassifiedsController');
 
+// Detailview
+Route::get('annoncedetajle/{id}', 'ClassifiedsController@detailView')->name('annoncedetalje');
+
 Route::resource('listcategories', 'ListcategoriesController');
 
 // Contact us page
@@ -55,7 +58,19 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/create/', 'HomeController@create')->name('create');
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/create/', 'AdminController@create')->name('create');
+
+	// Create listing data - send to database
+    Route::post('/createlisting/', 'AdminController@createListingForm')->name('createlisting');
+
+	// List listings in the admin panel
+	Route::get('/visannoncer', 'AdminController@dashboard')->name('visannoncer');
+
+	// Show edit form for listings
+    Route::get('/adminEditListing/{id}', 'AdminController@editListing')->name('adminEditListing');
+
+    // Delete listings
+    Route::get('/deletlisting/{id}', 'AdminController@deleteListing')->name('deleteListing');
 
 

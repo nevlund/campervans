@@ -33,7 +33,7 @@
         <div class="row bg-white border mt-2 mb-2 pt-4 pb-4">
 
             <div class="col-sm-2">
-              <img src="{{asset ('/')}}images/listings/{{$classified->main_image}}" width="100">
+              <img src="{{asset ('/')}}images/listings/{{$classified->image}}" width="100">
             </div>
             <div class="col-sm-2 h-50 d-inline-block">
               <h5><a href="/classifieds/{{$classified->id}}" class="secondary">{{$classified->title}}</a></h5>

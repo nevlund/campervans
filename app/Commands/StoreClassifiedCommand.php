@@ -10,31 +10,32 @@ class StoreClassifiedCommand extends Command  {
     public $title;
     public $category_id;
     public $description;
-    public $main_image;
+    public $image;
     public $price;
     public $condition;
     public $location;
     public $email;
     public $phone;
-    public $owner_id;
+    public $user_id;
+
     
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct($title, $category_id, $description, $main_image, $price, $condition, $location, $email, $phone, $owner_id)
+    public function __construct($title, $category_id, $description, $image, $price, $condition, $location, $email, $phone, $user_id)
     {
         $this->title = $title;
         $this->category_id = $category_id;
         $this->description = $description;
-        $this->main_image = $main_image;
+        $this->image = $image;
         $this->price = $price;
         $this->condition = $condition;
         $this->location = $location;
         $this->email = $email;
         $this->phone = $phone;
-        $this->owner_id = $owner_id;
+        $this->user_id = $user_id;
     }
 
     /**
@@ -48,13 +49,13 @@ class StoreClassifiedCommand extends Command  {
             'title' => $this->title,
             'category_id' => $this->category_id,
             'description' => $this->description,
-            'main_image' => $this->main_image,
+            'image' => $this->image,
             'price' => $this->price,
             'condition' => $this->condition,
             'location' => $this->location,
             'email' => $this->email,
             'phone' => $this->phone,
-            'owner_id' => $this->owner_id,
+            'id' => $this->user_id,
         ]);
     }
 }
