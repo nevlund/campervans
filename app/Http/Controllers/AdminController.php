@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ListcategoriesController;
 use App\Classified;
+//use App\Listcategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -21,14 +24,12 @@ class AdminController extends Controller
    public function dashboard () {
 
         $classifieds = Classified::paginate(10);
-
         return view ('visannoncer', ['classifieds'=>$classifieds]);
     }
 
     public function create () {
 
        return view('create');
-
 
     }
 

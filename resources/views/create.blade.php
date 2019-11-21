@@ -37,7 +37,9 @@
 
             <div class="form-group">
                 <select name="category_id" class="form-control">
+                 
                  <option value="1">Autocamper</option>
+                 
              </select>
             </div>
 

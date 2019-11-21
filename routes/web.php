@@ -13,11 +13,12 @@
 
 Route::get('/', function () {
     $posts = App\Post::all();
-    return view('index', compact('posts'));
+    $classifieds = App\Classified::all();
+    return view('index', compact('posts', 'classifieds'));
 });
 
 Route::get('annoncer', function () {
-    $posts = App\Classified::all();
+    $classifieds = App\Classified::all();
     return view('annoncer', compact('classifieds'));
 });
 
@@ -65,7 +66,7 @@ Auth::routes();
     Route::post('/createlisting/', 'AdminController@createListingForm')->name('createlisting');
 
 	// List listings in the admin panel
-	Route::get('/visannoncer', 'AdminController@dashboard')->name('visannoncer');
+	Route::get('/visannoncer/', 'AdminController@dashboard')->name('visannoncer');
 
 	// Show edit form for listings
     Route::get('/adminEditListing/{id}', 'AdminController@editListing')->name('adminEditListing');
