@@ -6,21 +6,20 @@ use App\Contact;
 use Mail;
 class ContactController extends Controller
 {
-   public function contact()
-{
-return view('contact');
+   public function contact() {
+   return view('contact');
 } 
    /** * Show the application dashboard. * * @return \Illuminate\Http\Response */
    public function contactPost(Request $request) 
    {
-    $this->validate($request, [ 'name' => 'required', 'email' => 'required|email', 'message' => 'required' ]);
+    $this->validate($request, [ 'navn' => 'required', 'email' => 'required|email', 'besked' => 'required' ]);
     Contact::create($request->all());
 
     Mail::send('email',
        array(
-           'name' => $request->get('navn'),
+           'navn' => $request->get('navn'),
            'email' => $request->get('email'),
-           'bodyMessage' => $request->get('besked')
+           'besked' => $request->get('besked')
        ), function($message)
    {
        $message->from('nievlund@gmail.com');

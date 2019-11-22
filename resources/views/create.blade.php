@@ -36,10 +36,11 @@
             </div>
 
             <div class="form-group">
-                <select name="category_id" class="form-control">
-                 
-                 <option value="1">Autocamper</option>
-                 
+                <select name="category_id" class="form-control" required>
+                <option value="0">Vælg venligst kategori</option>
+                 @foreach($listcategories as $listcategory)
+                 <option value="{{$listcategory['id']}}">{{$listcategory['name']}}</option>
+                 @endforeach
              </select>
             </div>
 

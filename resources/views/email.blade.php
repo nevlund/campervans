@@ -15,10 +15,10 @@
     			<div class="col col-lg-8">
       				<h2>Kontakt os</h2>
 
-						<p>Contact from enquery from: {{ $name }}
-						<p> Name: {{ $name }} </p>
+						<p>Contact from enquery from: {{ $navn }}
+						<p> Name: {{ $navn }} </p>
 						<p> Email: {{ $email }} </p>
-						<p> Message: {{ $bodyMessage }} </p>
+						<p> Message: {{ $besked }} </p>
 						</p>
     			</div>
 			</div>

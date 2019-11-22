@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ListcategoriesController;
 use App\Classified;
-//use App\Listcategory;
+use App\Listcategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -20,20 +20,22 @@ class AdminController extends Controller
        //$this->middleware('checkRole:admin');
    //}
 
-   // display all products in admin section
+   // display items that belongs to a user in admin section
    public function dashboard () {
 
-        $classifieds = Classified::paginate(10);
+        $classifieds = Classified::where('user_id', auth()->id())->get();
+
         return view ('visannoncer', ['classifieds'=>$classifieds]);
     }
 
     public function create () {
 
-       return view('create');
+      $listcategories = Listcategory::all();
 
+      return view('create', ['listcategories' => $listcategories]);
     }
 
-    // create new products - save to database
+    // create new listings - save to database
     public function createListingForm (Request $request) {
 
         $title = $request->input('title');

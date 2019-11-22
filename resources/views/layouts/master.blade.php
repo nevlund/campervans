@@ -68,8 +68,8 @@
 
 <footer class="bg-darkgreen footer py-2">
     <div class="container">
-        <span class="text-white text-small">Copyright 2019. Campervans.dk </span><span class="float-right"><i class="fa fa-cc-visa text-muted"></i>&nbsp;<i class="fa fa-cc-mastercard text-muted"></i>
-        <i class="fa fa-cc-amex text-muted fa-1x"></i></span>
+        <span class="text-white text-small">Copyright 2019. Campervans.dk </span><span class="float-right"><i class="fa fa-cc-visa text-white"></i>&nbsp;<i class="fa fa-cc-mastercard text-white"></i>
+        <i class="fa fa-cc-amex text-white fa-1x"></i></span>
     </div>
 </footer>
 </body>

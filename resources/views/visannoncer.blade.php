@@ -2,7 +2,7 @@
 
 @section('body')
 
-    @if(Auth::user()->name == "Admin") 
+    @if (count($classifieds)>0) 
 
     <div class="table-responsive">
         <table class="table table-striped">

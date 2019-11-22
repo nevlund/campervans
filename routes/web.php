@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    $posts = App\Post::all();
-    $classifieds = App\Classified::all();
+    $posts = App\Post::all()->take(4);
+    $classifieds = App\Classified::all()->take(4);
     return view('index', compact('posts', 'classifieds'));
 });
 
