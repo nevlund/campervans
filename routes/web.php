@@ -53,9 +53,6 @@ Route::get('post/{slug}', function($slug){
 	return view('post', compact('post'));
 });
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
 Auth::routes();
 

@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-md-4 col-md-offset-2 pt-4 mt-4">
 
-					<img src="{{ Voyager::image( $post->image ) }}" style="width:100%">
+					<img src="{{asset ('/')}}images/posts/{{$post->image}}" style="width:100%">
 
 				</div>
 			</div>
