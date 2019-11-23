@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Classified;
+use App\Ad;
 use App\Listcategory;
 
 class ListcategoriesController extends Controller

@@ -29,27 +29,27 @@
     </div>
     <div class="container">    
             
-        @foreach($classifieds as $classified)
+        @foreach($ads as $ad)
         <div class="row bg-white border mt-2 mb-2 pt-4 pb-4">
 
             <div class="col-sm-2">
-              <img src="{{asset ('/')}}images/listings/{{$classified->image}}" width="100">
+              <img src="{{asset ('/')}}images/listings/{{$ad->image}}" width="100">
             </div>
             <div class="col-sm-2 h-50 d-inline-block">
-              <h5><a href="/classifieds/{{$classified->id}}" class="secondary">{{$classified->title}}</a></h5>
-              <p class="overflow ellipsis">{{$classified->description}}</p>
+              <h5><a href="/ads/{{$ad->id}}" class="secondary">{{$ad->title}}</a></h5>
+              <p class="overflow ellipsis">{{$ad->description}}</p>
             </div>
             <div class="col-sm-2">
-              Kr. {{$classified->price}},-
+              Kr. {{$ad->price}},-
             </div>
             <div class="col-sm-2">
-              {{$classified->location}}
+              {{$ad->location}}
             </div>
             <div class="col-sm-2">
-              {{$classified->email}}
+              {{$ad->email}}
             </div>
             <div class="col-sm-2">
-              Tlf.:{{$classified->phone}}
+              Tlf.:{{$ad->phone}}
             </div>
            
         </div>
@@ -57,7 +57,7 @@
     
     </div>
     <div class="container mt-4 mb-4">  
-        <div class="col-12 secondary">{{ $classifieds->links() }}</div>
+        <div class="col-12 secondary">{{ $ads->links() }}</div>
     </div>    
 </main>
 @endsection

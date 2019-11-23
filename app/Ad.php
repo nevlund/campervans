@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Classified extends Model
+class Ad extends Model
 {
-    protected $table = 'classifieds';
+    protected $table = 'ads';
     
     protected $fillable = ['title', 'category_id','description', 'price', 'image', 'condition', 'location', 'email', 'phone', 'user_id'];
 

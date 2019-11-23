@@ -13,19 +13,19 @@
 
 Route::get('/', function () {
     $posts = App\Post::all()->take(4);
-    $classifieds = App\Classified::all()->take(4);
-    return view('index', compact('posts', 'classifieds'));
+    $ads = App\Ad::all()->take(4);
+    return view('index', compact('posts', 'ads'));
 });
 
 Route::get('annoncer', function () {
-    $classifieds = App\Classified::all();
-    return view('annoncer', compact('classifieds'));
+    $ads = App\Ad::all();
+    return view('annoncer', compact('ads'));
 });
 
 
 
 // Listings page
-Route::get('annoncer', 'ClassifiedsController@index')->name('annoncer');
+Route::get('annoncer', 'AdsController@index')->name('annoncer');
 
 // Blog page
 Route::get('blog', function () {
@@ -37,10 +37,10 @@ Route::get('blog', function () {
 Route::get('omos', 'PublicController@omos')->name('omos');
 
 // Listings
-Route::resource('classifieds', 'ClassifiedsController');
+Route::resource('ads', 'AdsController');
 
 // Detailview
-Route::get('annoncedetajle/{id}', 'ClassifiedsController@detailView')->name('annoncedetalje');
+Route::get('annoncedetajle/{id}', 'AdsController@detailView')->name('annoncedetalje');
 
 Route::resource('listcategories', 'ListcategoriesController');
 

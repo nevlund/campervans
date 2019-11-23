@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\File;
 
 use App\Http\Requests;
 use App\http\Controllers\Controller;
-use App\Classified;
+use App\Ad;
 use Auth;
 
 
-class ClassifiedsController extends Controller
+class AdsController extends Controller
 {
   
 
@@ -27,14 +27,14 @@ class ClassifiedsController extends Controller
      */
     public function index()
     {
-        $classifieds = Classified::all();
-        $classifieds = Classified::paginate(10);
-        return view('annoncer', compact('classifieds'));
+        $ads = Ad::all();
+        $ads = Ad::paginate(10);
+        return view('annoncer', compact('ads'));
     }
 
     public function annoncer()
     {
-        return view('annoncer', ['classifieds' => $classifieds]);
+        return view('annoncer', ['ads' => $ads]);
     }
 
     /**
@@ -77,7 +77,7 @@ class ClassifiedsController extends Controller
         $command = new StoreClassifiedCommand($title, $category_id, $description, $main_image_filename, $price, $condition, $location, $email, $phone, $user_id);
         $this->dispatch($command);
         
-        return \Redirect::route('classifieds.index')
+        return \Redirect::route('ads.index')
                 ->with('message', 'Annonce er oprettet');
     }
 
@@ -89,8 +89,8 @@ class ClassifiedsController extends Controller
      */
     public function show($id)
     {
-        $classified = Classified::find($id);
-        return view('annoncedetalje', compact('classified'));
+        $ad = Ad::find($id);
+        return view('annoncedetalje', compact('ad'));
     }
 
     /**

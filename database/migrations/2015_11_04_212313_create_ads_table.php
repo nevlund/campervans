@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassifiedsTable extends Migration
+class CreateAdsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,18 @@ class CreateClassifiedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('classifieds', function (Blueprint $table) {
+        Schema::create('ads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('description');
             $table->string('price');
             $table->string('condition');
-            $table->string('main_image');
+            $table->string('image');
             $table->string('location');
             $table->string('email');
             $table->string('phone');
-            $table->integer('user_id');
+            $table->integer('category_id');
+            $table->biginteger('user_id');
             $table->timestamps();
         });
     }
@@ -34,6 +35,6 @@ class CreateClassifiedsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('classifieds');
+        Schema::drop('ads');
     }
 }

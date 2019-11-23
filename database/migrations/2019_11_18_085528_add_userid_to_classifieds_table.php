@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUseridToClassifiedsTable extends Migration
+class AddUseridToAdsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddUseridToClassifiedsTable extends Migration
      */
     public function up()
     {
-        Schema::table('classifieds', function (Blueprint $table) {
+        Schema::table('ads', function (Blueprint $table) {
          $table->integer('user_id')->unsigned();
          $table->foreign('user_id')->references('id')->on('users');
        });
@@ -26,8 +26,8 @@ class AddUseridToClassifiedsTable extends Migration
      */
     public function down()
     {
-        Schema::table('classifieds', function (Blueprint $table) {
-            $table->dropForeign('classifieds_user_id_foreign');
+        Schema::table('ads', function (Blueprint $table) {
+            $table->dropForeign('ads_user_id_foreign');
         });
     }
 }

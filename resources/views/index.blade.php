@@ -47,11 +47,11 @@
 		<h2 align="center">Seneste annoncer</h2>
 		<div class="row">
 			
-		@foreach($classifieds as $classified)
+		@foreach($ads as $ad)
 			<div class="col-md-3">
-				<a href="/classifieds/{{$classified->id}}" class="secondary">
-					<img src="{{asset ('/')}}images/listings/{{$classified->image}}" style="width:100%">
-					<span>{{ $classified->title }}</span>
+				<a href="/ads/{{$ad->id}}" class="secondary">
+					<img src="{{asset ('/')}}images/listings/{{$ad->image}}" style="width:100%">
+					<span>{{ $ad->title }}</span>
 				</a>
 			</div>
 		@endforeach

@@ -2,7 +2,7 @@
 
 @section('body')
 
-    @if (count($classifieds)>0) 
+    @if (count($ads)>0) 
 
     <div class="table-responsive">
         <table class="table table-striped">
@@ -18,17 +18,17 @@
             </thead>
             <tbody>
 
-            @foreach($classifieds as $classified)
+            @foreach($ads as $ad)
 
            
                 <tr>
-                    <td>{{$classified['id']}}</td>
-                    <td><img src="{{asset ('/')}}images/listings/{{$classified->image}}" alt="{{asset ('/')}}images/listings/{{$classified->image}}" width="100" height="100" style="max-height:220px" ></td>
-                    <td><strong>{{$classified['title']}}</strong>:<br>
-                    {{$classified['description']}}</td>
-                    <td>Kr. {{$classified['price']}}</td>
-                     <td><a href="{{ route('adminEditListing',['id' => $classified['id'] ])}}" class="btn btn-primary">Rediger</a></td>
-            <td><a href="{{ route('deleteListing',['id' => $classified['id']])}}"  class="btn btn-warning">Slet</a></td>
+                    <td>{{$ad['id']}}</td>
+                    <td><img src="{{asset ('/')}}images/listings/{{$ad->image}}" alt="{{asset ('/')}}images/listings/{{$ad->image}}" width="100" height="100" style="max-height:220px" ></td>
+                    <td><strong>{{$ad['title']}}</strong>:<br>
+                    {{$ad['description']}}</td>
+                    <td>Kr. {{$ad['price']}}</td>
+                     <td><a href="{{ route('adminEditListing',['id' => $ad['id'] ])}}" class="btn btn-primary">Rediger</a></td>
+            <td><a href="{{ route('deleteListing',['id' => $ad['id']])}}"  class="btn btn-warning">Slet</a></td>
                     
                 </tr>
            

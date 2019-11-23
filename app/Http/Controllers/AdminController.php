@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ListcategoriesController;
-use App\Classified;
+use App\Ad;
 use App\Listcategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -23,9 +23,9 @@ class AdminController extends Controller
    // display items that belongs to a user in admin section
    public function dashboard () {
 
-        $classifieds = Classified::where('user_id', auth()->id())->get();
+        $ads = Ad::where('user_id', auth()->id())->get();
 
-        return view ('visannoncer', ['classifieds'=>$classifieds]);
+        return view ('visannoncer', ['ads'=>$ads]);
     }
 
     public function create () {
@@ -64,7 +64,7 @@ class AdminController extends Controller
         
         $createListing = Array('title'=>$title, 'category_id'=>$category_id, 'description'=>$description, 'price'=>$price, 'condition'=>$condition, 'image'=>$image, 'location'=>$location, 'email'=>$email, 'phone'=>$phone, 'user_id'=>$user_id);
 
-        DB::table('classifieds')->insert($createListing);
+        DB::table('ads')->insert($createListing);
 
         return redirect()->route('home');
 
@@ -74,7 +74,7 @@ class AdminController extends Controller
     public function editListing ($id) {
 
        $classified = Classified::find($id);
-       return view('editListing', ['classified'=>$classified]);
+       return view('editListing', ['ad'=>$ad]);
 
     }
 
@@ -142,9 +142,9 @@ class AdminController extends Controller
 
     public function deleteListing ($id) {
 
-       $classified = Classified::find($id);
+       $ad = Ad::find($id);
 
-       Classified::destroy($id);
+       Ad::destroy($id);
 
        return redirect()->route('visannoncer');
     }
