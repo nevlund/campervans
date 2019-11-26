@@ -1,9 +1,9 @@
 <?php
-
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration
+class CreateListcategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -26,6 +27,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('listcategories');
+        Schema::dropIfExists('listcategories');
     }
 }

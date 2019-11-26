@@ -12,7 +12,7 @@ class Listcategory extends Model
 
     protected $hidden = [];
     
-    public function classifieds(){
-        return $this->hasMany('App\Classified');
+    public function ads(){
+        return $this->hasMany('App\Ad');
     }
 }

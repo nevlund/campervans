@@ -8,11 +8,8 @@ class Ad extends Model
 {
     protected $table = 'ads';
     
-    protected $fillable = ['title', 'category_id','description', 'price', 'image', 'condition', 'location', 'email', 'phone', 'user_id'];
+    protected $fillable = ['title', 'listcategory_id', 'vehicle_id', 'description', 'year', 'color', 'fueltype', 'price', 'image', 'user_id'];
 
     protected $hidden = [];
     
-    public function category(){
-        return $this->belongsTo('App\Listcategory');
-    }
 }

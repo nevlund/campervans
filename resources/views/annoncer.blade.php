@@ -36,7 +36,7 @@
               <img src="{{asset ('/')}}images/listings/{{$ad->image}}" width="100">
             </div>
             <div class="col-sm-2 h-50 d-inline-block">
-              <h5><a href="/ads/{{$ad->id}}" class="secondary">{{$ad->title}}</a></h5>
+              <h5><a href="/ads/{{$ad->id, $ad->user_id}}" class="secondary">{{$ad->title}}</a></h5>
               <p class="overflow ellipsis">{{$ad->description}}</p>
             </div>
             <div class="col-sm-2">

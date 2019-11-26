@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\File;
 use App\Http\Requests;
 use App\http\Controllers\Controller;
 use App\Ad;
+use App\User;
 use Auth;
 
 
@@ -37,49 +38,7 @@ class AdsController extends Controller
         return view('annoncer', ['ads' => $ads]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
    
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreClassifiedRequest $request)
-    {
-        $title = $request->input('title');
-        $category_id = $request->input('category_id');
-        $description = $request->input('description');
-        $price = $request->input('price');
-        $condition = $request->input('condition');
-        $main_image = $request->file('main_image');
-        $location = $request->input('location');
-        $email = $request->input('email');
-        $phone = $request->input('phone');
-        $user_id = auth()->id();
-        
-        //$owner_id = 1;
-        
-        // Check if image uploaded
-        if($main_image){
-            $main_image_filename = $main_image->getClientOriginalName();
-            $main_image->move(public_path('images/listings'), $main_image_filename);
-        } else {
-            $main_image_filename = 'noimage.jpg';
-        }
-        
-        // Create Command
-        $command = new StoreClassifiedCommand($title, $category_id, $description, $main_image_filename, $price, $condition, $location, $email, $phone, $user_id);
-        $this->dispatch($command);
-        
-        return \Redirect::route('ads.index')
-                ->with('message', 'Annonce er oprettet');
-    }
 
     /**
      * Display the specified resource.
@@ -90,7 +49,9 @@ class AdsController extends Controller
     public function show($id)
     {
         $ad = Ad::find($id);
-        return view('annoncedetalje', compact('ad'));
+        $user = User::find($id);
+        //$ads = Ad::where('user_id', auth()->id())->get();
+        return view('annoncedetalje', compact('ad', 'user'));
     }
 
     /**

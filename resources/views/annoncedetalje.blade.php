@@ -22,9 +22,9 @@
                     
                     <h4 class="pt-4">Kontakt information</h4>
                     <ul class="list-group">
-                        <li class="list-group-item"><strong>Område:</strong> {{$ad->location}} </li>
-                        <li class="list-group-item"><strong>Kontakt email:</strong> {{$ad->email}} </li>
-                        <li class="list-group-item"><strong>Kontakt tlf:</strong> {{$ad->phone}} </li>
+                        <li class="list-group-item"><strong>Område:</strong> {{$user->name}} </li>
+                        <li class="list-group-item"><strong>Kontakt email:</strong> {{$user->email}} </li>
+                        <li class="list-group-item"><strong>Kontakt tlf:</strong> {{$user->phone}} </li>
                     </ul>
             </div>
            
