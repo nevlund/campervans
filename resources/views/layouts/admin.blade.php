@@ -18,23 +18,39 @@
       
 
     <title>@yield('title')</title>
+
+   <script type="text/javascript">
+  $(function(){
+    $('.nav a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+    $('.nav a').click(function(){
+      $(this).parent().addClass('active').siblings().removeClass('active')  
+    })
+  })
+  </script> 
   </head>
 
   @include('includes.navigation')
   <body class="app sidebar-show">
 
   <div class="app-body">
-    <div class="sidebar">
+    <div class="sidebar bg-transparent text-dark pt-4 mt-4 pl-4">
       <!-- Sidebar content here -->
-      <ul class="nav flex-column">
+      <ul class="nav flex-column list-group">
+        <li class="nav-item active">
+            <a class="nav-link text-dark" href="{{ route('home') }}">Kontrolpanel</a>
+        </li>
+
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('home') }}">Kontrolpanel</a>
+
+            <a class="nav-link text-dark" href="{{ route('edit_user') }}">Rediger profil</a>
+
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="{{ route('visannoncer') }}">Vis annoncer</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('visannoncer') }}">Vis annoncer</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('create') }}">Opret annonce</a>
+            <a class="nav-link text-dark" href="{{ route('create') }}">Opret annonce</a>
         </li>
       </ul>  
     </div>
@@ -45,10 +61,6 @@
     </main>
    
   </div>
-
-
-
-
     
 
     <!-- Optional JavaScript -->

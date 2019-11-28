@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -38,7 +38,7 @@
     <div class="container">
         <div class="row pt-4">
             <div class="col-6">
-                <img src="{{asset ('/')}}images/web-images/logo-footer-white.png" alt="" width="150" class="py-2">
+                <img src="{{asset ('/')}}images/web-images/logo-footer-white.png" alt="campervans logo" width="150" class="py-2">
                 <p class="text-light text-small">
                 Campervans.dk er en online handelsportal<br> med fokus udelukkende på køb og salg af autocampere, <br>campervans samt campingvogne. </p>
 

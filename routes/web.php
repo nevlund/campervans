@@ -40,7 +40,7 @@ Route::get('omos', 'PublicController@omos')->name('omos');
 Route::resource('ads', 'AdsController');
 
 // Detailview
-Route::get('annoncedetajle/{id}', 'AdsController@detailView')->name('annoncedetalje');
+Route::get('annoncedetajle/{id}', 'AdsController@show')->name('annoncedetalje');
 
 Route::resource('listcategories', 'ListcategoriesController');
 
@@ -62,11 +62,21 @@ Auth::routes();
 	// Create listing data - send to database
     Route::post('/createlisting/', 'AdminController@createListingForm')->name('createlisting');
 
+    // Show edit form for user
+    Route::get('/edit_user/', 'UserController@edit')->name('edit_user');
+    Route::post('/edit_user/', 'UserController@update')->name('update_user');
+
+    // Update user form page
+    //Route::post('/update_usert/{id}', 'AdminController@updateUser')->name('update_user');
+
 	// List listings in the admin panel
 	Route::get('/visannoncer/', 'AdminController@dashboard')->name('visannoncer');
 
-	// Show edit form for listings
-    Route::get('/adminEditListing/{id}', 'AdminController@editListing')->name('adminEditListing');
+	// Show edit form for ads
+    Route::get('/edit_ad/{id}', 'AdminController@editListing')->name('edit_ad');
+
+    // Update product
+    Route::post('/update_ad/{id}', 'AdminController@updateAd')->name('update_ad');
 
     // Delete listings
     Route::get('/deletlisting/{id}', 'AdminController@deleteListing')->name('deleteListing');

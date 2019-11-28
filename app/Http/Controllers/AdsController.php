@@ -38,7 +38,6 @@ class AdsController extends Controller
         return view('annoncer', ['ads' => $ads]);
     }
 
-   
 
     /**
      * Display the specified resource.

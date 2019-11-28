@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-light bg-white border-none box-shadow py-3">
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="card-img-top" src="{{asset ('/')}}images/web-images/logo-header.png" alt="forside">
+                <img class="card-img-top" src="{{asset ('/')}}images/web-images/campervans-logo.png" alt="forside">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -2,7 +2,7 @@
 
 body {
     
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
 }
 
@@ -46,6 +46,15 @@ h1, h2, h3, h4, h5 {
 }
 h1 {
     font-size: 1.75em;
+}
+.table thead th, .table-borderless th {
+  font-weight: bold;
+}
+li.nav-item active {
+  background-color: #000;
+}
+.border-0 {
+  border:none;
 }
 .bg-darkgreen {
     background-color: #40614D;

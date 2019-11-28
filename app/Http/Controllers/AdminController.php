@@ -8,6 +8,7 @@ use App\Http\Controllers\ListcategoriesController;
 use App\Ad;
 use App\Listcategory;
 use App\Vehicle;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -25,29 +26,28 @@ class AdminController extends Controller
    public function dashboard () {
 
         $ads = Ad::where('user_id', auth()->id())->get();
-
         return view ('visannoncer', ['ads'=>$ads]);
     }
 
     public function create () {
 
       $listcategories = Listcategory::all();
-
-      return view('create', ['listcategories' => $listcategories]);
+      $vehicles = Vehicle::all();
+      return view('create', ['listcategories' => $listcategories, 'vehicles' => $vehicles]);
     }
 
     // create new listings - save to database
     public function createListingForm (Request $request) {
 
         $title = $request->input('title');
-        $category_id = $request->input('category_id');
+        $listcategory_id = $request->input('listcategory_id');
+        $vehicle_id = $request->input('vehicle_id');
         $description = $request->input('description');
         $price = $request->input('price');
-        $condition = $request->input('condition');
         $image = $request->file('image');
-        $location = $request->input('location');
-        $email = $request->input('email');
-        $phone = $request->input('phone');
+        $year = $request->input('year');
+        $color = $request->input('color');
+        $fueltype = $request->input('fueltype');
         $user_id = auth()->id();
 
         
@@ -63,7 +63,7 @@ class AdminController extends Controller
 
 
         
-        $createListing = Array('title'=>$title, 'category_id'=>$category_id, 'description'=>$description, 'price'=>$price, 'condition'=>$condition, 'image'=>$image, 'location'=>$location, 'email'=>$email, 'phone'=>$phone, 'user_id'=>$user_id);
+        $createListing = Array('title'=>$title, 'listcategory_id'=>$listcategory_id, 'vehicle_id'=>$vehicle_id, 'description'=>$description, 'price'=>$price, 'image'=>$image, 'year'=>$year, 'color'=>$color, 'fueltype'=>$fueltype, 'user_id'=>$user_id);
 
         DB::table('ads')->insert($createListing);
 
@@ -71,13 +71,25 @@ class AdminController extends Controller
 
     }
 
-    // display product edit form
+    // display ad listing edit form
     public function editListing ($id) {
 
-       $classified = Classified::find($id);
-       return view('editListing', ['ad'=>$ad]);
+      $listcategories = Listcategory::all();
+      $vehicles = Vehicle::all();
+      $ad = Ad::find($id);
+      return view('edit_ad', ['ad'=>$ad, 'listcategories' => $listcategories, 'vehicles' => $vehicles]);
 
     }
+    // display user edit form
+    public function editUser ($id) {
+
+      $user = User::find($id);
+      //$user = User::all();
+      return view('edit_user', ['user'=>$user]);
+
+    }
+
+   
 
     // display product image edit form
     public function editProductImage ($id) {
@@ -111,7 +123,7 @@ class AdminController extends Controller
             $arrayToUpdate = array('image'=>$product->image);
             DB::table('products')->where('id', $id)->update($arrayToUpdate);
 
-            return redirect()->route('displayproducts');
+            return redirect()->route('visannoncer');
 
             }
 
@@ -124,20 +136,23 @@ class AdminController extends Controller
 
     }
 
-    public function updateProduct (Request $request, $id) {
+    public function updateAd (Request $request, $id) {
 
-       $artist = $request->input('artist');
-       $title = $request->input('title');
-       $description = $request->input('description');
-       $condition = $request->input('condition');
-       $category = $request->input('category');
-       $price = $request->input('price');
+        $title = $request->input('title');
+        $listcategory_id = $request->input('listcategory_id');
+        $vehicle_id = $request->input('vehicle_id');
+        $description = $request->input('description');
+        $price = $request->input('price');
+        $year = $request->input('year');
+        $color = $request->input('color');
+        $fueltype = $request->input('fueltype');
+        $user_id = auth()->id();
 
-       $updateArray = array('artist'=>$artist, 'title'=>$title, 'description'=>$description, 'condition'=>$condition, 'category'=>$category, 'price'=>$price);
+       $updateArray = Array('title'=>$title, 'listcategory_id'=>$listcategory_id, 'vehicle_id'=>$vehicle_id, 'description'=>$description, 'price'=>$price, 'year'=>$year, 'color'=>$color, 'fueltype'=>$fueltype, 'user_id'=>$user_id);
 
-       DB::table('products')->where('id', $id)->update($updateArray);
+       DB::table('ads')->where('id', $id)->update($updateArray);
 
-       return redirect() -> route('displayproducts');
+       return redirect() -> route('visannoncer');
 
     }
 
