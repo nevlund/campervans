@@ -34,7 +34,7 @@
 				  			<option>Vælg model</option>
 						</select>
 				    </div>
-				    <div class="col-3">
+				    <div class="col-3 text-right">
 				    	<button type="submit" class="btn btn-secondary mb-2 darkgreen">Søg</button>
 				    </div>
   				</div>
@@ -51,7 +51,7 @@
 			<div class="col-md-3 d-flex">
 				<div class="card-deck">
 					  <div class="card">
-					    <img class="card-img-top" src="{{asset ('/')}}images/listings/{{$ad->image}}" alt="seneste annoncer" style="width:100%">
+					    <img class="card-img-top" src="{{asset ('/')}}images/listings/{{$ad->image}}" alt="seneste annoncer" style="height:50%">
 						    <div class="card-body h-25">
 						      <h5 class="card-title">{{ $ad->title }}</h5>
 						    </div>
@@ -63,6 +63,9 @@
 				</div>
 			</div>
 			@endforeach
+			<div class="col-md-12 mt-4">
+				<p class="text-center"><a href="{{ route('annoncer') }}" class="btn btn-secondary">Se alle annoncer</a>
+			</div>
 		</div>
 	</div>	
     <!-- /.row -->
@@ -83,6 +86,9 @@
 				</div>
 			</div>
 		@endforeach
+			<div class="col-md-12 mt-4">
+				<p class="text-center"><a href="blog/" class="btn btn-secondary">Se alle tips</a>
+			</div>
 		</div>
 	</div>
     <!-- /.row -->

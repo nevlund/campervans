@@ -66,8 +66,8 @@ class AdminController extends Controller
         $createListing = Array('title'=>$title, 'listcategory_id'=>$listcategory_id, 'vehicle_id'=>$vehicle_id, 'description'=>$description, 'price'=>$price, 'image'=>$image, 'year'=>$year, 'color'=>$color, 'fueltype'=>$fueltype, 'user_id'=>$user_id);
 
         DB::table('ads')->insert($createListing);
-
-        return redirect()->route('home');
+        $request->session()->flash('success', 'Annoncen er blevet oprettet.');
+        return redirect()->back();
 
     }
 
@@ -89,52 +89,6 @@ class AdminController extends Controller
 
     }
 
-   
-
-    // display product image edit form
-    public function editProductImage ($id) {
-
-        $product = Product::find($id);
-        return view('admin.editproductimage', ['product'=>$product]);
-
-    }
-
-    // Update product images
-    public function updateProductImage (Request $request, $id) {
-
-       Validator::make($request->all(),['image'=>'required|file|image|mimes:jpg,png,jpeg|max:2000'])->validate();
-
-        if ($request->hasFile('image')) {
-
-            $product = Product::find($id);
-            $exists = Storage::disk('public')->exists($product->image);
-
-            //delete old image
-            if($exists){
-                Storage::delete('public/images/product-images/'.$product->image);
-
-            }
-
-            //upload new image
-            $request->file('image')->getClientOriginalExtension();
-
-            $request->image->storeAs('public/images/product-images/',$product->image);
-
-            $arrayToUpdate = array('image'=>$product->image);
-            DB::table('products')->where('id', $id)->update($arrayToUpdate);
-
-            return redirect()->route('visannoncer');
-
-            }
-
-            else {
-
-            $error = "No image was selected";
-            return $error;
-
-            }
-
-    }
 
     public function updateAd (Request $request, $id) {
 
@@ -152,7 +106,8 @@ class AdminController extends Controller
 
        DB::table('ads')->where('id', $id)->update($updateArray);
 
-       return redirect() -> route('visannoncer');
+        $request->session()->flash('success', 'Annoncen er blevet opdateret.');
+        return redirect()->back();
 
     }
 

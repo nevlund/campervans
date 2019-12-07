@@ -45,7 +45,7 @@
         </div>
     
     <div class="container mt-4 mb-4">  
-        <div class="col-12 secondary">{{ $ads->links() }}</div>
+        <div class="col-md-12 secondary">{{ $ads->links() }}</div>
     </div>    
 </main>
 @endsection

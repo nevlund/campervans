@@ -26,6 +26,11 @@
                 <form action="/update_ad/{{$ad->id}}" method="post" enctype="multipart/form-data">
 
                   {{csrf_field()}}
+                  @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                      {{session('success')}}
+                    </div>
+                  @endif
 
                 <div class="form-group row">
                     <label for="title" class="col-md-4 col-form-label text-md-right">Overskrift</label>

@@ -45,6 +45,70 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'brand' => 'Euramobil',
+            'model' => 'Eura'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Fiat',
+            'model' => 'Ducato'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Ford',
+            'model' => 'Bürstner'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Hobby',
+            'model' => 'Optima'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Hymer',
+            'model' => 'Hymercar'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Mercedes',
+            'model' => 'Marco Polo'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Roadcar',
+            'model' => 'Roadcar'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
+            'brand' => 'Peugeout',
+            'model' => 'Boxer'
+
+        ]);
+        $vehicle->save();
+
+        $vehicle = new \App\Vehicle([
+
         	'brand' => 'VW',
         	'model' => 'California'
 

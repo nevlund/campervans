@@ -4,6 +4,7 @@ body {
     
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
+    font-weight: 300;
 }
 
 .primary {
@@ -12,9 +13,10 @@ body {
 .secondary{
     color:#0E3746;
 } 
-li.page-item.active li.page-link {
+.sidebar .nav-item li.nav-item active a {
     background-color: #0E3746;
     border-color: #0E3746;
+    text-decoration: underline;
 }
 
 .overflow {
@@ -95,6 +97,7 @@ footer a:link, footer a:visited {
 }
 .navbar-light .navbar-nav > li > a {
     color: #0E3746;
+    font-weight:400;
 }
 .navbar-light .navbar-brand:hover {
     color: #BE2623;
