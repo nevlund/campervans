@@ -48,7 +48,9 @@ class AdsController extends Controller
     public function show($id)
     {
         $ad = Ad::find($id);
-        $user = User::find($id);
+        $ad->user_id;
+        $user = User::find($ad->user_id);
+        $vehicleid = $ad->vehicle_id;
         //$ads = Ad::where('user_id', auth()->id())->get();
         return view('annoncedetalje', compact('ad', 'user'));
     }

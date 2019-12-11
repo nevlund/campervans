@@ -15,7 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_role');
+            $table->biginteger('role_id')->unsigned();
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -23,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('street');
             $table->integer('postalcode')->unsigned();
             $table->foreign('postalcode')->references('postalcode')->on('postalcodes');
+            $table->string('city');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

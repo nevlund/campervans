@@ -200,7 +200,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '10',
             'listcategory_id' => '2',
             'title' => 'Mercedes V250 d',
@@ -243,7 +243,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '10',
             'listcategory_id' => '2',
             'title' => 'Mercedes V220 d',
@@ -286,7 +286,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '11',
             'listcategory_id' => '1',
             'title' => 'Mercedes V220 d',
@@ -302,7 +302,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '12',
             'listcategory_id' => '1',
             'title' => 'Peugeot Boxer 335',
@@ -330,7 +330,7 @@ IALT KR: 621.946,-',
 
           $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '13',
             'listcategory_id' => '2',
             'title' => 'VW California 2,0 TDi 199 Ocean DSG 4M 4d',
@@ -346,7 +346,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '13',
             'listcategory_id' => '2',
             'title' => 'VW California 2,0 TDi 150 Ocean DSG 4d',
@@ -362,7 +362,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '13',
             'listcategory_id' => '2',
             'title' => 'VW California 2,0 TDi 150 Ocean DSG 4d',
@@ -399,7 +399,7 @@ IALT KR: 621.946,-',
 
         $ad = new \App\Ad([
 
-            'user_id' => '3',
+            'user_id' => '2',
             'vehicle_id' => '13',
             'listcategory_id' => '2',
             'title' => 'VW Grand California',

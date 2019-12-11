@@ -44,7 +44,7 @@
                     <div class="col-md-6">
                       <select name="listcategory_id" class="form-control" required>
                        @foreach($listcategories as $listcategory)
-                       <option value="{{$listcategory['id']}}">{{$listcategory['name']}}</option>
+                       <option value="{{$listcategory['id']}}" {{ ($ad['listcategory_id'] == $listcategory['id']) ? 'selected' : '' }}   >{{$listcategory['name']}}</option>
                        @endforeach
                       </select>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-6">
                       <select name="vehicle_id" class="form-control" required>
                        @foreach($vehicles as $vehicle)
-                       <option value="{{$vehicle['id']}}">{{$vehicle['brand']}}</option>
+                       <option value="{{$vehicle['id']}}" {{ ($ad['vehicle_id'] == $vehicle['id']) ? 'selected' : '' }}   >{{$vehicle['brand']}}</option>
                        @endforeach
                       </select>
                     </div>

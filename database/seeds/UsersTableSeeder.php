@@ -1,29 +1,44 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
-use TCG\Voyager\Models\Role;
-use TCG\Voyager\Models\User;
 
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Auto generated seed file.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        if (User::count() == 0) {
-            $role = Role::where('name', 'admin')->firstOrFail();
+        $user = new \App\User([
 
-            User::create([
-                'name'           => 'Admin',
-                'email'          => 'admin@admin.com',
-                'password'       => bcrypt('password'),
-                'remember_token' => Str::random(60),
-                'role_id'        => $role->id,
-            ]);
-        }
+        	'user_id' => '1',
+        	'role_id' => '1',
+        	'name' => 'privatbruger',
+        	'street' => 'Privatadresse 14',
+        	'postalcode' => '6700',
+			'city'=> 'Esbjerg',
+			'email'=> 'privat@admin.com',
+			'phone'=> '90909090',
+			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi'		
+
+        ]);
+        $user->save();
+
+        $user = new \App\User([
+
+        	'user_id' => '2',
+        	'role_id' => '2',
+        	'name' => 'forhandlerbruger',
+        	'street' => 'Forhandleradresse 14',
+        	'postalcode' => '6700',
+			'city'=> 'Esbjerg',
+			'email'=> 'forhandler@admin.com',
+			'phone'=> '89898989',
+			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi'		
+
+        ]);
+        $user->save();
     }
 }
