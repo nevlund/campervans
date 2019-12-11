@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
 use App\Http\Requests;
-use App\http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Ad;
 use App\User;
 use Auth;
