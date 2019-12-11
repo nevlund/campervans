@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Post;
 
 class PublicController extends Controller
