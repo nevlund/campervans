@@ -13,7 +13,6 @@ class UsersTableSeeder extends Seeder
     {
         $user = new \App\User([
 
-        	'user_id' => '1',
         	'role_id' => '1',
         	'name' => 'privatbruger',
         	'street' => 'Privatadresse 14',
@@ -21,14 +20,13 @@ class UsersTableSeeder extends Seeder
 			'city'=> 'Esbjerg',
 			'email'=> 'privat@admin.com',
 			'phone'=> '90909090',
-			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi'		
+			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi',		
 
         ]);
         $user->save();
 
         $user = new \App\User([
 
-        	'user_id' => '2',
         	'role_id' => '2',
         	'name' => 'forhandlerbruger',
         	'street' => 'Forhandleradresse 14',
@@ -36,7 +34,7 @@ class UsersTableSeeder extends Seeder
 			'city'=> 'Esbjerg',
 			'email'=> 'forhandler@admin.com',
 			'phone'=> '89898989',
-			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi'		
+			'password'=> '$2y$10$FxP9gEOG7y3VYpiYI/CCU.0K/Vhl3liEoG1GnVjJHlcjNZFu2QnGi',		
 
         ]);
         $user->save();

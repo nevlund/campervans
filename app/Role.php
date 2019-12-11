@@ -11,5 +11,9 @@ class Role extends Model
     protected $fillable = ['name', 'display_name', 'created_at', 'updated_at'];
 
     protected $hidden = [];
+
+    public function users(){
+        return $this->hasMany('App\User');
+    }
     
 }

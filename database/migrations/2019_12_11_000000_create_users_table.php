@@ -22,8 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('phone');
             $table->string('street');
-            $table->integer('postalcode')->unsigned();
-            $table->foreign('postalcode')->references('postalcode')->on('postalcodes');
+            $table->integer('postalcode');
             $table->string('city');
             $table->string('password');
             $table->rememberToken();

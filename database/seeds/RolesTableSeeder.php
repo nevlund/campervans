@@ -13,22 +13,22 @@ class RolesTableSeeder extends Seeder
     {
         $role = new \App\Role([
 
-        	'id' => '1',
         	'name' => 'privat',
         	'display_name' => 'privat bruger',
         	'created_at' => '2019-11-14 14:07:55',
         	'updated_at' => '2019-11-14 14:08:16'
 
         ]);
+        $role->save();
 
         $role = new \App\Role([
 
-        	'id' => '1',
         	'name' => 'forhandler',
         	'display_name' => 'forhandler bruger',
         	'created_at' => '2019-11-14 14:07:55',
         	'updated_at' => '2019-11-14 14:08:16'
 
         ]);
+        $role->save();
     }
 }
