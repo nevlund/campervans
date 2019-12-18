@@ -47,17 +47,17 @@
                 <h6 class="text-light">Kontakt</h6>
                 <ul class="list-unstyled text-small">
                     <p class="text-light text-small">
-                     <li><a href="{{ route('login') }}">Kontakt os</a></a></li>
-                    <li><a href="{{ route('register') }}">Support</a></li>
-                    <li><a href="{{ route('register') }}">Privatlivspolitik</a></li>
+                     <li><a href="{{ route('contact.store') }}">Kontakt os</a></a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privatlivspolitik</a></li>
                    
                 </ul>
             </div>
             <div class="col-3 py-2">
                 <h6 class="text-light">Annoncering</h6>
                 <ul class="list-unstyled text-small">
-                    <li><a href="{{ route('login') }}">Reklame annoncer</a></a></li>
-                    <li><a href="{{ route('register') }}">Forhandler</a></li>
+                    <li><a href="#">Reklame annoncer</a></a></li>
+                    <li><a href="#">Forhandler</a></li>
                 </ul>
             </div>
  

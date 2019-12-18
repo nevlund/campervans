@@ -15,6 +15,9 @@ class CreateVehiclesTable extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('listcategory_id')->unsigned();
+            $table->foreign('listcategory_id')->references('id')->on('listcategories')->onDelete('CASCADE')->onUpdate('CASCADE');
+        
             $table->string('brand')->unique();
             $table->string('model');
             $table->timestamps();

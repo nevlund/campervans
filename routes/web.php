@@ -27,6 +27,9 @@ Route::get('annoncer', function () {
 // Listings page
 Route::get('annoncer', 'AdsController@index')->name('annoncer');
 
+// Search function
+//Route::get('annoncer', 'AdsController@search')->name('annoncer');
+
 // Blog page
 Route::get('blog', function () {
     $posts = App\Post::all();

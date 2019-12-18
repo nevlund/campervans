@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\File;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Ad;
+use App\Listcategory;
+use App\Vehicle;
 use App\User;
 use Auth;
 
@@ -30,14 +32,22 @@ class AdsController extends Controller
     {
         $ads = Ad::all();
         $ads = Ad::paginate(10);
-        return view('annoncer', compact('ads'));
+        $listcategories = Listcategory::all();
+        $vehicles = Vehicle::all();
+        return view('annoncer', compact('ads'), ['listcategories' => $listcategories, 'vehicles' => $vehicles]);
+    }
+
+    public function getListcategories()
+    {
+        $countries = DB::table('listcategories')->pluck("name","id");
+        return view('dropdown',compact('countries'));
     }
 
     public function annoncer()
     {
+
         return view('annoncer', ['ads' => $ads]);
     }
-
 
     /**
      * Display the specified resource.

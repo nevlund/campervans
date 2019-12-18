@@ -33,7 +33,7 @@
                 </li>
 
                 @guest
-                    <li class="nav-item px-2 ml-4">
+                    <li class="nav-item px-2 pb-4">
                         <a class="nav-link btn btn-outline-secondary" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     <li class="nav-item px-2">
