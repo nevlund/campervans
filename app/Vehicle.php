@@ -8,7 +8,7 @@ class Vehicle extends Model
 {
     protected $table = 'vehicles';
     
-    protected $fillable = ['brand', 'model'];
+    protected $fillable = ['listcategory_id','brand', 'model'];
 
     protected $hidden = [];
     

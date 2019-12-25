@@ -13,7 +13,8 @@ class VehiclesTableSeeder extends Seeder
      {
         $vehicle = new \App\Vehicle([
 
-        	'brand' => 'Adria',
+        	'listcategory_id' => '1',
+            'brand' => 'Adria',
         	'model' => 'Matrix 670 Plus'
 
         ]);
@@ -21,7 +22,8 @@ class VehiclesTableSeeder extends Seeder
         
        	$vehicle = new \App\Vehicle([
 
-        	'brand' => 'Bavaria',
+        	'listcategory_id' => '1',
+            'brand' => 'Bavaria',
         	'model' => 'A71'
 
         ]);
@@ -29,7 +31,8 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
-        	'brand' => 'Benimar',
+        	'listcategory_id' => '1',
+            'brand' => 'Benimar',
         	'model' => 'Benivan'
 
         ]);
@@ -37,7 +40,8 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
-        	'brand' => 'Bravia',
+        	'listcategory_id' => '1',
+            'brand' => 'Bravia',
         	'model' => '599'
 
         ]);
@@ -45,6 +49,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Euramobil',
             'model' => 'Eura'
 
@@ -53,6 +58,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Fiat',
             'model' => 'Ducato'
 
@@ -61,6 +67,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Ford',
             'model' => 'Bürstner'
 
@@ -69,6 +76,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Hobby',
             'model' => 'Optima'
 
@@ -77,6 +85,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Hymer',
             'model' => 'Hymercar'
 
@@ -85,6 +94,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '2',
             'brand' => 'Mercedes',
             'model' => 'Marco Polo'
 
@@ -93,6 +103,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Roadcar',
             'model' => 'Roadcar'
 
@@ -101,6 +112,7 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
+            'listcategory_id' => '1',
             'brand' => 'Peugeout',
             'model' => 'Boxer'
 
@@ -109,7 +121,8 @@ class VehiclesTableSeeder extends Seeder
 
         $vehicle = new \App\Vehicle([
 
-        	'brand' => 'VW',
+        	'listcategory_id' => '2',
+            'brand' => 'VW',
         	'model' => 'California'
 
         ]);

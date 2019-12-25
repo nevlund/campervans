@@ -37,10 +37,10 @@ class AdsController extends Controller
         return view('annoncer', compact('ads'), ['listcategories' => $listcategories, 'vehicles' => $vehicles]);
     }
 
-    public function getListcategories()
+    public function getBrands($id)
     {
-        $countries = DB::table('listcategories')->pluck("name","id");
-        return view('dropdown',compact('countries'));
+        $brands = DB::table("vehicles")->where("listcategory_id",$id)->pluck("brand","id");
+        return json_encode($brands);
     }
 
     public function annoncer()

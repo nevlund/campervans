@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                  <form class="form-horizontal" role="form" method="POST" action="">
+                  <form class="form-horizontal" role="form">
                     {{csrf_field()}}
                     <div class="form-row">
                         <div class="col-3">
